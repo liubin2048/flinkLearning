@@ -1,4 +1,4 @@
-package com.liubin.flink.dataSet.batchAPI
+package com.liubin.flink.common.API
 
 import org.apache.flink.api.common.functions.RichMapFunction
 import org.apache.flink.api.scala.ExecutionEnvironment
@@ -40,8 +40,6 @@ object DistributedCacheDemo {
     }).setParallelism(2)
 
     result.print()
-
-    env.execute("DistributedCacheDemo")
 
   }
 

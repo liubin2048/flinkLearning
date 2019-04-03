@@ -1,6 +1,6 @@
 package com.liubin.flink.project.util
 
-import com.bonc.bdev.project.constant.PropertiesConstants
+import com.liubin.flink.project.constant.PropertiesConstants
 import org.apache.flink.streaming.api.functions.source.SourceFunction
 import org.slf4j.LoggerFactory
 import redis.clients.jedis.Jedis

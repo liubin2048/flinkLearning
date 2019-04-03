@@ -1,13 +1,15 @@
 package com.liubin.flink.dataSet.batchAPI
 
-import org.apache.flink.api.scala.ExecutionEnvironment
+import java.lang
 
-import scala.collection.mutable.ListBuffer
+import org.apache.flink.api.common.functions.MapPartitionFunction
+import org.apache.flink.api.scala.ExecutionEnvironment
+import org.apache.flink.util.Collector
 
 /**
   * author : liubin
-  * date : 2019/3/13
-  * Description : MapPartititon 通过将给定的函数应用于数据集的每个并行分区
+  * date : 2019/4/3
+  * Description : 
   */
 object MapPartitionDemo {
 
@@ -16,25 +18,33 @@ object MapPartitionDemo {
     val env = ExecutionEnvironment.getExecutionEnvironment
     import org.apache.flink.api.scala._
 
-    val data = List[String]("hello word", "apache flink")
-    val text = env.fromCollection(data)
+    val data = env.fromElements("flink vs spark", "buffer vs  shuffer")
 
-    text.mapPartition(lines => {
-      //创建数据库连接，建议将这块代码放到try-catch代码块中
-      //此时是一个分区的数据获取一次连接【优点，每个分区获取一次链接】,values中保存了一个分区的数据
-
-      val res = ListBuffer[String]()
-
-      while (lines.hasNext) {
-        val line = lines.next()
-        val words = line.split("\\W+")
-        res.append(words(1))
+    // 以partition为粒度，进行map操作，计算element个数
+    val test1 = data.mapPartition(new MapPartitionFunction[String, String]() {
+      override def mapPartition(values: lang.Iterable[String], out: Collector[String]): Unit = {
+        val itor = values.iterator()
+        while (itor.hasNext) {
+          val line = itor.next().toUpperCase + "--##bigdata##"
+          out.collect(line)
+        }
       }
-      res
-      //关闭连接
-    }).print()
+    })
+    test1.print()
 
-    env.execute("MapPartitionDemo")
-
+    // 以partition为粒度，进行map操作，转化为大写并,并计算line的长度。
+    val test4 = data.mapPartition(new MapPartitionFunction[String, Wc] {
+      override def mapPartition(values: lang.Iterable[String], out: Collector[Wc]): Unit = {
+        val itor = values.iterator
+        while (itor.hasNext) {
+          var s = itor.next()
+          out.collect(Wc(s.toUpperCase(), s.length))
+        }
+      }
+    })
+    test4.print()
   }
+
+  case class Wc(line: String, lenght: Int)
+
 }

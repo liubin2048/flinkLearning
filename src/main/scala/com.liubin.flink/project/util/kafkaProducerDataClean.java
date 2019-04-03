@@ -1,6 +1,6 @@
 package com.liubin.flink.project.util;
 
-import com.bonc.bdev.project.constant.PropertiesConstants;
+import com.liubin.flink.project.constant.PropertiesConstants;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;

@@ -1,6 +1,6 @@
 package com.liubin.flink.dataStream.streamAPI
 
-import com.bonc.bdev.dataStream.custormSource.SingleParallelSource
+import com.liubin.flink.dataStream.custormSource.SingleParallelSource
 import org.apache.flink.api.common.functions.Partitioner
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 

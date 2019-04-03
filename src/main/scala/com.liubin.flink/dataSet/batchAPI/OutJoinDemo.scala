@@ -50,8 +50,6 @@ object OutJoinDemo {
       }
     }).print()
 
-    env.execute("OutJoinDemo")
-
   }
 
 }

@@ -1,4 +1,4 @@
-package com.liubin.flink.dataSet.batchAPI
+package com.liubin.flink.common.API
 
 import org.apache.flink.api.common.functions.RichMapFunction
 import org.apache.flink.api.scala.ExecutionEnvironment
@@ -62,8 +62,6 @@ object BroadcastDemo {
     }).withBroadcastSet(broadcastData, "broadcastMapName")
 
     result.print()
-
-    env.execute("BroadcastDemo")
 
   }
 

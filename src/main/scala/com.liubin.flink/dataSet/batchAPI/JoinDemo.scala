@@ -31,9 +31,6 @@ object JoinDemo {
     })
       .print()
 
-    env.execute("JoinDemo")
-
   }
-
 
 }

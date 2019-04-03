@@ -3,8 +3,8 @@ package com.liubin.flink.project.app
 import java.util.Properties
 
 import com.alibaba.fastjson.JSON
-import com.bonc.bdev.project.constant.PropertiesConstants
-import com.bonc.bdev.project.util.RedisSource
+import com.liubin.flink.project.constant.PropertiesConstants
+import com.liubin.flink.project.util.RedisSource
 import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.streaming.api.{CheckpointingMode, TimeCharacteristic}
 import org.apache.flink.streaming.api.environment.CheckpointConfig

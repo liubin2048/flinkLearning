@@ -1,4 +1,4 @@
-package com.liubin.flink.dataSet.batchAPI
+package com.liubin.flink.common.API
 
 import org.apache.flink.api.scala.ExecutionEnvironment
 
@@ -52,8 +52,6 @@ object PartitionerDemo {
       }
       it
     }).print()
-
-    env.execute("PartitionerDemo")
 
   }
 }

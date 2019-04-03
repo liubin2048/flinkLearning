@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat
 import java.util.{Date, Properties}
 
 import com.alibaba.fastjson.JSON
-import com.bonc.bdev.project.constant.PropertiesConstants
+import com.liubin.flink.project.constant.PropertiesConstants
 import org.apache.flink.api.common.functions.RuntimeContext
 import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.api.java.tuple.{Tuple, Tuple4}

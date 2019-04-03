@@ -10,7 +10,7 @@ import scala.collection.mutable.ListBuffer
   * date : 2019/3/13
   * Description : 
   */
-class FirstNDemo {
+object FirstNDemo {
 
   def main(args: Array[String]): Unit = {
 
@@ -42,7 +42,6 @@ class FirstNDemo {
     //不分组，全局排序获取集合中的前3个元素
     text.sortPartition(0, Order.ASCENDING).sortPartition(1, Order.DESCENDING).first(3).print()
 
-    env.execute("FirstNDemo")
   }
 
 }

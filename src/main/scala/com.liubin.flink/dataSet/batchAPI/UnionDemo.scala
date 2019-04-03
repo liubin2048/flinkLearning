@@ -24,8 +24,6 @@ object UnionDemo {
 
     text1.union(text2).print()
 
-    env.execute("UnionDemo")
-
   }
 
 }

@@ -1,4 +1,4 @@
-package com.liubin.flink.dataSet.batchAPI
+package com.liubin.flink.common.API
 
 import org.apache.flink.api.common.accumulators.IntCounter
 import org.apache.flink.api.common.functions.RichMapFunction
@@ -50,8 +50,6 @@ object AccumulatorsDemo {
     // 获取累加器的结果
     val num = jobResult.getAccumulatorResult[Int]("numLines")
     println("AccumulatorResult (numLines) :" + num)
-
-    env.execute("AccumulatorsDemo")
 
   }
 

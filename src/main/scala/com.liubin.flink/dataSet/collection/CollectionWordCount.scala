@@ -23,7 +23,6 @@ object CollectionWordCount {
     val data = env.fromCollection(collection)
     data.map(word =>(word,1)).groupBy(0).sum(1).print()
 
-    env.execute("CollectionWordCount")
   }
 
 }

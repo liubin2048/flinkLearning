@@ -1,6 +1,6 @@
 package com.liubin.flink.dataStream.streamAPI
 
-import com.bonc.bdev.dataStream.custormSource.{ParallelSource, SingleParallelSource}
+import com.liubin.flink.dataStream.custormSource.{ParallelSource, SingleParallelSource}
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 
 /**

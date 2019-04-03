@@ -23,7 +23,5 @@ object CrossDemo {
 
     text1.cross(text2).print()
 
-    env.execute("CrossDemo")
-
   }
 }
